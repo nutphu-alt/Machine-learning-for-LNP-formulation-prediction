@@ -15,7 +15,7 @@ from skopt import BayesSearchCV
 from skopt.space import Real, Integer
 
 
-df = pd.read_excel("C:/Users/PC MSI/Desktop/งาน/LNP/Results/Mos/ML prediction/DOE BBD lipid4 and 72_clean.xlsx")
+df = pd.read_excel("data")
 
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
 
@@ -183,5 +183,6 @@ for name, model_obj in ML_model:
     print(f"R2 score for {name}: {final_overall_r2}")
 
     results_df_[name].to_excel(writer, sheet_name=name, index=False)
+
 
 writer.close()
