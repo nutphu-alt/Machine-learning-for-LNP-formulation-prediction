@@ -1,1 +1,1 @@
-This project utilize machine learning to predict optimal ratios of the lipid nanoparticle (LNP) components for mRNA delivery
+This project utilizes machine learning to predict optimal lipid nanoparticle (LNP) components ratios for mRNA delivery. However, this work are preparing for publication, so I cannot show the real data.
