@@ -15,7 +15,7 @@ from skopt import BayesSearchCV
 from skopt.space import Real, Integer
 
 
-df = pd.read_excel("data")
+df = pd.read_excel("data.xlsx")
 
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
 
@@ -101,7 +101,7 @@ ML_model = [
 
 results_df_ = {}
 
-excel_path = "C:/Users/PC MSI/Desktop/งาน/LNP/Results/Mos/nestedCV.xlsx"
+excel_path = "saved_excel.xlsx"
 writer = pd.ExcelWriter(excel_path, engine='xlsxwriter')
 
 for name, model_obj in ML_model:
@@ -186,3 +186,4 @@ for name, model_obj in ML_model:
 
 
 writer.close()
+
