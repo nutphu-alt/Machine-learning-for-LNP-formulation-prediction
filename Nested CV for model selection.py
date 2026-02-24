@@ -14,23 +14,28 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, m
 from skopt import BayesSearchCV
 from skopt.space import Real, Integer
 
+# Load data
+df = pd.read_excel(loaded file)
 
-df = pd.read_excel("data.xlsx")
-
+# Drop row with missing data
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
 
+# Select features and target
 FEATURES = ["pH", "Helper lipid (%)", "PEG lipid (%)", "Ionizable lipid (%)"]
 TARGET = "MFI"
 
 X = df[FEATURES].values
 y = df[TARGET].values
 
+# Function for log transform
 def log_transform(y):
     return np.log1p(y)
 
+# Function to revert log transform
 def inv_log_transform(y):
     return np.expm1(y)
 
+# Parameters for each model
 en_param = {
     "regressor__Elastic Net__alpha": Real(0.0001, 1000),
     "regressor__Elastic Net__l1_ratio": Real(0, 1),
@@ -101,9 +106,11 @@ ML_model = [
 
 results_df_ = {}
 
-excel_path = "saved_excel.xlsx"
+# Path for saving output file
+excel_path = "saved file"
 writer = pd.ExcelWriter(excel_path, engine='xlsxwriter')
 
+# Hyper parameter optimization and matices evaluation
 for name, model_obj in ML_model:
     base_model = Pipeline([
         ("scaler", StandardScaler()),
@@ -184,6 +191,4 @@ for name, model_obj in ML_model:
 
     results_df_[name].to_excel(writer, sheet_name=name, index=False)
 
-
 writer.close()
-
