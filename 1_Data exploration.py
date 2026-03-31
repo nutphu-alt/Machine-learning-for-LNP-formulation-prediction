@@ -1,10 +1,7 @@
 import pandas as pd
 
-pd.set_option('display.width', 400)
-pd.set_option('display.max_columns', 20)
-
 # Load data
-df = pd.read_excel("saed data")
+df = pd.read_excel("dataset/dataset.xlsx")
 
 def data_explore(dataframe):
     print("DATA EXPLORATION")
