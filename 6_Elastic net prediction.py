@@ -144,10 +144,10 @@ print(f"Custom value predicted MFI: {base_value}")
 
 # Define cutoff parameters (None = no limit)
 MFI_MINIMUM = (float(base_value) + float(model_rmse["MFI"]))
-SIZE_MAXIMUM = 100           # must be < 100 nm
-PDI_MAXIMUM = 0.2            # e.g. 0.2
-POS_MINIMUM = None           # e.g. 50
-EE_MINIMUM = 80              # e.g. 70
+SIZE_MAXIMUM = None        
+PDI_MAXIMUM = None          
+POS_MINIMUM = None         
+EE_MINIMUM = None          
 
 print(f"MFI min: {MFI_MINIMUM}")
 
