@@ -100,7 +100,7 @@ The correlation heatmap of input parameters aginst output parameters is generate
 The heatmap displays the same trend as the scatter plot. the pH and Helper lipid shows significant positive correlation with MFI, while Ionizable lipid and PEG lipid shows negative correlation.  
 
 ## 4. Model selection  
-In order to select the best model for the data, nested cross validation, together with hyperparameter optimization, was performed. The model with the lowest root mean square error (RMSE) was selected.
+In order to select the best model for predicting MFI, nested cross validation, together with hyperparameter optimization, was performed. Leave one out cross validation was used as a outer cv method, since the dataset was very small, while RepeatedKFold was used as a inner cv method. Cholesterol was shown to have only a little correlation with the MFI, so I decided to withdraw it from the inputs. The model with the lowest root mean square error (RMSE) was selected.
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/32c47ec7-4362-44ea-bd8f-6d3f88496ddf" />  
 
@@ -108,5 +108,13 @@ MLP model shows the lowest RMSE value. However, the prediction result from MLP m
 
 ## 5. Learning curve plot  
 
+## 6. Prediction  
+The dataframe of LNP formulas was generated for every combinations of each input. Then, the prediction was carried out. In addition to MFI, the model also predict other outputs, including %Positive cells, %Encapsulation efficiancy, size in nm and PDI. I filtered the formula with lower MFI compared to the formula Q from the dataset (highest MFI) plus RMSE value from the test set out and shows only the top 5 predicted formulas with the highest MFI.
+
+<img width="1903" height="521" alt="image" src="https://github.com/user-attachments/assets/16cf5718-c35a-4ff1-88b7-569ae2faea21" />
+
+## 7. Parity plot
+
+## 8. Parameter weight
 
 
