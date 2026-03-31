@@ -12,11 +12,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.compose import TransformedTargetRegressor
 from sklearn.metrics import mean_squared_error
 
-DATA_PATH = "loaded data"
-OUTPUT_CSV_PATH = "saved data"
-
 # Load data
-df = pd.read_excel(DATA_PATH)
+df = pd.read_excel("dataset/dataset.xlsx")
 
 # Drop rows with missing outputs
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
@@ -177,7 +174,7 @@ print(top_results.head(10))
 top_results = pd.concat([top_results, custom_df], ignore_index=True)
 
 # Save to CSV
-top_results.to_csv(OUTPUT_CSV_PATH, index=False)
+top_results.to_csv("prediction.csv", index=False)
 
 # Create label for plotting
 top_results["Condition"] = top_results.apply(
