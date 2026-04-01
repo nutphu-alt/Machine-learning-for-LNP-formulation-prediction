@@ -109,16 +109,21 @@ MLP model shows the lowest RMSE value. However, the prediction result from MLP m
 ## 5. Learning curve plot  
 After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
 
-<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/a2c2c7d7-96f2-4bb5-adbe-2805cd1b60ff" />
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/a2c2c7d7-96f2-4bb5-adbe-2805cd1b60ff" />
 
 As the training set size increses, the test score also increses and the dataset is very small, so I decided to split 15% of the data to be validation/test set.
 
 ## 6. Prediction  
 The dataframe of LNP formulas was generated for every combinations of each input. Then, the prediction was carried out. In addition to MFI, the model also predict other outputs, including %Positive cells, %Encapsulation efficiancy, size in nm and PDI. I filtered the formula with lower MFI compared to the formula Q from the dataset (highest MFI) plus RMSE value from the test set out and shows only the top 5 predicted formulas with the highest MFI.
 
-<img width="1903" height="521" alt="image" src="https://github.com/user-attachments/assets/16cf5718-c35a-4ff1-88b7-569ae2faea21" />
+<img width="1700" height="500" alt="image" src="https://github.com/user-attachments/assets/16cf5718-c35a-4ff1-88b7-569ae2faea21" />
 
-## 7. Parity plot
+## 7. Parity and residual plots
+The parity and residual plot represented the performance of regression fit. The training (85%) and test (15%) set were separately evaluated.
+
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/7538926f-8b55-4a34-a510-36216310c290" /> <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/2262b2db-061a-4adf-b179-fc96ca8b98ec" />
+
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/cddec222-47d4-44c4-85ec-d659b1d748bd" /> <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/de4165ef-34e9-4772-8059-d923528cdfe3" />
 
 ## 8. Parameter weight
 The weight of each parameter was also plot and shown below.
