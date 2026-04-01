@@ -75,7 +75,7 @@ test_r2 = r2_score(y_test, test_preds)
 print(f"Train RMSE: {train_rmse:.2f}, R²: {train_r2:.2f}")
 print(f"Test RMSE: {test_rmse:.2f}, R²: {test_r2:.2f}")
 
-# Compute learning curve
+# Compute learning curve from score
 train_sizes, train_scores, test_scores = learning_curve(
     en_opt, X, y, cv=5, scoring='r2', train_sizes=np.linspace(0.1, 1, 25)
 )
@@ -96,7 +96,34 @@ plt.title("Learning Curve")
 plt.xlabel("Number of sample in the training set")
 plt.yticks(np.arange(-2, 1.5, 0.5))
 plt.xticks(np.arange(0, 24, 4))
-plt.ylabel("R² score")
+plt.ylabel("Score")
+plt.legend(loc="best")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# Compute learning curve from error
+train_sizes, train_scores, test_scores = learning_curve(
+    en_opt, X, y, cv=5, scoring='neg_root_mean_squared_error', train_sizes=np.linspace(0.1, 1, 25)
+)
+
+# Calculate mean and std
+train_mean = (np.mean(train_scores, axis=1))
+train_std = (np.std(train_scores, axis=1))
+test_mean = (np.mean(test_scores, axis=1))
+test_std = (np.std(test_scores, axis=1))
+
+# Plot
+plt.figure(figsize=(8, 6))
+plt.plot(train_sizes, train_mean, 'o-', color='blue', label='Training score')
+plt.plot(train_sizes, test_mean, 'o-', color='green', label='Test score')
+plt.fill_between(train_sizes, train_mean - train_std, train_mean + train_std, alpha=0.2, color='blue')
+plt.fill_between(train_sizes, test_mean - test_std, test_mean + test_std, alpha=0.2, color='green')
+plt.title("Learning Curve")
+plt.xlabel("Number of sample in the training set")
+plt.yticks(np.arange(-2, 1.5, 0.5))
+plt.xticks(np.arange(0, 24, 4))
+plt.ylabel("Error")
 plt.legend(loc="best")
 plt.grid(True)
 plt.tight_layout()
