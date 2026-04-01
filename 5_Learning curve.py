@@ -60,6 +60,7 @@ en_opt = BayesSearchCV(
 )
 
 en_opt.fit(X_train, y_train)
+en_opt.best_params_
 
 # After fitting
 train_preds = en_opt.predict(X_train)
