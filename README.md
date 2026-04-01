@@ -107,6 +107,11 @@ In order to select the best model for predicting MFI, nested cross validation, t
 MLP model shows the lowest RMSE value. However, the prediction result from MLP model returns the same values for every formula which is unusual. It is due to the nature of the model that is not suitable with the small dataset. Therefore, the Elastic Net model, the second lowest RMSE, is selected instead.  
 
 ## 5. Learning curve plot  
+After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
+
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/a2c2c7d7-96f2-4bb5-adbe-2805cd1b60ff" />
+
+As the training set size increses, the test score also increses and the dataset is very small, so I decided to split 15% of the data to be validation/test set.
 
 ## 6. Prediction  
 The dataframe of LNP formulas was generated for every combinations of each input. Then, the prediction was carried out. In addition to MFI, the model also predict other outputs, including %Positive cells, %Encapsulation efficiancy, size in nm and PDI. I filtered the formula with lower MFI compared to the formula Q from the dataset (highest MFI) plus RMSE value from the test set out and shows only the top 5 predicted formulas with the highest MFI.
@@ -116,5 +121,8 @@ The dataframe of LNP formulas was generated for every combinations of each input
 ## 7. Parity plot
 
 ## 8. Parameter weight
+The weight of each parameter was also plot and shown below.
+
+<img width="1800" height="751" alt="image" src="https://github.com/user-attachments/assets/126be5fb-a01d-415e-b81e-41680d840f14" />
 
 
