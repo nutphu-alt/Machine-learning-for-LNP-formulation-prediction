@@ -109,7 +109,8 @@ MLP model shows the lowest RMSE value. However, the prediction result from MLP m
 ## 5. Learning curve plot  
 After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
 
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/a2c2c7d7-96f2-4bb5-adbe-2805cd1b60ff" />
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/0923f3e7-f03a-442c-b8de-40e439bad1fb" />
+
 
 As the training set size increses, the test score also increses and the dataset is very small, so I decided to split 15% of the data to be validation/test set.
 
