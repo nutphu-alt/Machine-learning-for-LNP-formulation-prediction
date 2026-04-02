@@ -132,9 +132,13 @@ The dataframe of LNP formulas was generated for every combinations of each input
 The parity and residual plot represented the performance of regression fit. The training (85%) and test (15%) set were separately evaluated.
 
 <p align="center">
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/7538926f-8b55-4a34-a510-36216310c290" /> <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/2262b2db-061a-4adf-b179-fc96ca8b98ec" />
-
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/cddec222-47d4-44c4-85ec-d659b1d748bd" /> <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/de4165ef-34e9-4772-8059-d923528cdfe3" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/7538926f-8b55-4a34-a510-36216310c290" />
+ <br>
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2262b2db-061a-4adf-b179-fc96ca8b98ec" />
+ <br>
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/cddec222-47d4-44c4-85ec-d659b1d748bd" /> 
+  <br>
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/de4165ef-34e9-4772-8059-d923528cdfe3" />
 </p>
 
 ## 8. Parameter weight
