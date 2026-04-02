@@ -88,47 +88,59 @@ dtype: float64
 ## 2. Data visualization  
 After the data was inspected, I used the scatter plot to visualize the data pattern of each inputs and outputs.
 
+<p align="center">
 <img width="1200" height="500" alt="MFI" src="https://github.com/user-attachments/assets/2285da7b-9078-4dbc-bb81-c592010ad5ed" />  
+</p>
 
 From the plot between inputs and mean fluorescence intensity (MFI), which is the main output that we need to maximize, it is shown that all inputs except cholesterol affect the MFI.  
 
 ## 3. Correlation heatmap
 The correlation heatmap of input parameters aginst output parameters is generated. The asterisks represent p value where * is p <= 0.05, ** is p <= 0.01 and *** is p <= 0.001.  
 
+<p align="center">
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/6551df60-f485-4055-ba3e-0d54ed2dd0e6" />  
+</p>
 
 The heatmap displays the same trend as the scatter plot. the pH and Helper lipid shows significant positive correlation with MFI, while Ionizable lipid and PEG lipid shows negative correlation.  
 
 ## 4. Model selection  
 In order to select the best model for predicting MFI, nested cross validation, together with hyperparameter optimization, was performed. Leave one out cross validation was used as a outer cv method, since the dataset was very small, while RepeatedKFold was used as a inner cv method. Cholesterol was shown to have only a little correlation with the MFI, so I decided to withdraw it from the inputs. The model with the lowest root mean square error (RMSE) was selected.
 
+<p align="center">
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/32c47ec7-4362-44ea-bd8f-6d3f88496ddf" />  
+</p>
 
 MLP model shows the lowest RMSE value. However, the prediction result from MLP model returns the same values for every formula which is unusual. It is due to the nature of the model that is not suitable with the small dataset. Therefore, the Elastic Net model, the second lowest RMSE, is selected instead.  
 
 ## 5. Learning curve plot  
 After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
 
+<p align="center">
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/0923f3e7-f03a-442c-b8de-40e439bad1fb" />
-
+</p>
 
 As the training set size increses, the test score also increses and the dataset is very small, so I decided to split 15% of the data to be validation/test set.
 
 ## 6. Prediction  
 The dataframe of LNP formulas was generated for every combinations of each input. Then, the prediction was carried out. In addition to MFI, the model also predict other outputs, including %Positive cells, %Encapsulation efficiancy, size in nm and PDI. I filtered the formula with lower MFI compared to the formula Q from the dataset (highest MFI) plus RMSE value from the test set out and shows only the top 5 predicted formulas with the highest MFI.
 
+<p align="center">
 <img width="1700" height="500" alt="image" src="https://github.com/user-attachments/assets/16cf5718-c35a-4ff1-88b7-569ae2faea21" />
+</p>
 
 ## 7. Parity and residual plots
 The parity and residual plot represented the performance of regression fit. The training (85%) and test (15%) set were separately evaluated.
 
+<p align="center">
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/7538926f-8b55-4a34-a510-36216310c290" /> <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/2262b2db-061a-4adf-b179-fc96ca8b98ec" />
 
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/cddec222-47d4-44c4-85ec-d659b1d748bd" /> <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/de4165ef-34e9-4772-8059-d923528cdfe3" />
+</p>
 
 ## 8. Parameter weight
 The weight of each parameter was also plot and shown below.
 
+<p align="center">
 <img width="1800" height="751" alt="image" src="https://github.com/user-attachments/assets/126be5fb-a01d-415e-b81e-41680d840f14" />
-
+</p>
 
