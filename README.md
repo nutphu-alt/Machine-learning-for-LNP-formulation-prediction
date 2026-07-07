@@ -137,7 +137,7 @@ The parity and residual plot represented the performance of regression fit. The 
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2262b2db-061a-4adf-b179-fc96ca8b98ec" />
  <br>
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/cddec222-47d4-44c4-85ec-d659b1d748bd" /> 
-  <br>
+ <br>
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/de4165ef-34e9-4772-8059-d923528cdfe3" />
 </p>
 
@@ -146,5 +146,14 @@ The weight of each parameter was also plot and shown below.
 
 <p align="center">
 <img width="1800" height="751" alt="image" src="https://github.com/user-attachments/assets/126be5fb-a01d-415e-b81e-41680d840f14" />
+<br>
+<br>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+<br>
+<p align="left">
+**In conclusion, due to the small size of the data set, we cannot observe the turning point of MFI in each input. We can actually predict the optimized formula from just visuallized data. However, this workflow can be fundamentally used with other, larger datasets.**
 </p>
+
+
 
