@@ -152,7 +152,7 @@ The weight of each parameter was also plot and shown below.
 <br>
 <br>
 <p align="left">
-**In conclusion, due to the small size of the data set, we cannot observe the turning point of MFI in each input. We can actually predict the optimized formula from just visuallized data. However, this workflow can be fundamentally used with other, larger datasets.**
+In conclusion, due to the small size of the data set, we cannot observe the turning point of MFI in each input. We can actually predict the optimized formula from just visuallized data. However, this workflow can be fundamentally used with other, larger datasets.
 </p>
 
 
