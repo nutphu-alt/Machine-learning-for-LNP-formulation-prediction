@@ -110,7 +110,7 @@ In order to select the best model for predicting MFI, nested cross validation, t
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/32c47ec7-4362-44ea-bd8f-6d3f88496ddf" />  
 </p>
 
-MLP model shows the lowest RMSE value. However, the prediction result from MLP model returns the same values for every formula which is unusual. It is due to the nature of the model that is not suitable with the small dataset. Therefore, the Elastic Net model, the second lowest RMSE, is selected instead.  
+MLP model shows the lowest RMSE value. However, the prediction result from MLP model returns the same MFI values for every predicted formula, which is unusual. It is due to the nature of the model that is not suitable with the small dataset. Therefore, the Elastic Net model, the second lowest RMSE, is selected instead.  
 
 ## 5. Learning curve plot  
 After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
@@ -152,7 +152,7 @@ The weight of each parameter was also plot and shown below.
 <br>
 <br>
 <p align="left">
-In conclusion, due to the small size of the data set, we cannot observe the turning point of MFI in each input. We can actually predict the optimized formula from just visuallized data. However, this workflow can be fundamentally used with other, larger datasets.
+**Due to the small size of the data set, we cannot observe the turning point of MFI in each input. We can actually predict the optimized formula from just visuallized data. However, this workflow can be fundamentally used with other, larger datasets.
 </p>
 
 
