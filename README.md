@@ -107,10 +107,10 @@ The heatmap displays the same trend as the scatter plot. the pH and Helper lipid
 In order to select the best model for predicting MFI, nested cross validation, together with hyperparameter optimization, was performed. Leave one out cross validation was used as a outer cv method, since the dataset was very small, while RepeatedKFold was used as a inner cv method. Cholesterol was shown to have only a little correlation with the MFI, so I decided to withdraw it from the inputs. The model with the lowest root mean square error (RMSE) was selected.
 
 <p align="center">
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/32c47ec7-4362-44ea-bd8f-6d3f88496ddf" />  
+<img width="517" height="356" alt="image" src="https://github.com/user-attachments/assets/cba7ccef-00fd-43f2-b282-27fda38713e6" />
 </p>
 
-MLP model shows the lowest RMSE value. However, the prediction result from MLP model returns the same MFI values for every predicted formula, which is unusual. It is due to the nature of the model that is not suitable with the small dataset. Therefore, the Elastic Net model, the second lowest RMSE, is selected instead.  
+Elastic Net model shows the lowest RMSE value. Therefore, it is selected for prediction.  
 
 ## 5. Learning curve plot  
 After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
