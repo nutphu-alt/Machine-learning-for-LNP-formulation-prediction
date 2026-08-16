@@ -15,7 +15,7 @@ from skopt import BayesSearchCV
 from skopt.space import Real, Integer
 
 # Load data
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 # Drop row with missing data
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
