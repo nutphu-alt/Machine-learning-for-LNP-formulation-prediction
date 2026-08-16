@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
 # Load your Excel file
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 # Drop rows with missing values (optional)
 df = df.dropna()
