@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load data
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 def data_explore(dataframe):
     print("DATA EXPLORATION")
