@@ -12,7 +12,7 @@ from sklearn.compose import TransformedTargetRegressor
 from sklearn.pipeline import Pipeline
 
 # Load data
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 # Drop non-numeric or irrelevant columns (e.g., Run)
 df = df.drop(columns=["Run", "non-lysed LNP", "Lysed LNP"])
