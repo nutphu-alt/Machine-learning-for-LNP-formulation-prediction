@@ -79,9 +79,9 @@ xgb_param = {
 
 mlp_param = {
     'regressor__MLP__hidden_layer_sizes': [(2,), (4,), (8,), (4,4), (4,2), (4,4,2)],
-    'regressor__MLP__alpha': (0.0001, 100),
+    'regressor__MLP__alpha': Real(0.0001, 100),
     'regressor__MLP__activation': ['relu', 'tanh'],
-    'regressor__MLP__learning_rate_init': (0.00001, 0.01)
+    'regressor__MLP__learning_rate_init': Real(0.00001, 0.01)
 }
 
 param_dict = {
