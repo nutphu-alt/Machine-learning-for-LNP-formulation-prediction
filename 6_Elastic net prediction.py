@@ -13,7 +13,7 @@ from sklearn.compose import TransformedTargetRegressor
 from sklearn.metrics import mean_squared_error
 
 # Load data
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 # Drop rows with missing outputs
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
