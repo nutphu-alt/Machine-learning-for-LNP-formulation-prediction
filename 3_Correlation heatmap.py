@@ -11,7 +11,7 @@ df = pd.read_excel("./dataset/dataset.xlsx")
 df = df.dropna()
 
 # Select input and output columns
-input = df[["Helper lipid (%)", "PEG lipid (%)", "Cholesterol (%)", "Ionizable lipid (%)", "N:P Ratio"]]
+input = df[["Helper lipid (%)", "PEG lipid (%)", "Cholesterol (%)", "Ionizable lipid (%)", "pH"]]
 output = df[["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"]]
 
 # Select only numeric columns
