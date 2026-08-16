@@ -6,7 +6,7 @@ import pandas as pd
 from scipy import stats
 
 # Load data
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 # Drop non-numeric or irrelevant columns
 df = df.drop(columns=["Run", "non-lysed LNP", "Lysed LNP"])
