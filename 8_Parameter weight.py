@@ -10,7 +10,7 @@ from sklearn.pipeline import Pipeline
 from skopt.space import Real
 
 # Load data
-df = pd.read_excel("dataset/dataset.xlsx")
+df = pd.read_excel("./dataset/dataset.xlsx")
 
 df = df.dropna(subset=["MFI", "%Positive cells", "%EE", "Size (nm)", "PDI"])
 
