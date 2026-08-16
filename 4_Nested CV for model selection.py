@@ -37,7 +37,7 @@ def inv_log_transform(y):
 
 # Parameters for each model
 en_param = {
-    "regressor__Elastic Net__alpha": Real(0.0001, 1000),
+    "regressor__Elastic Net__alpha": Real(0.0001, 1000, prior="log-uniform"),
     "regressor__Elastic Net__l1_ratio": Real(0, 1),
     "regressor__Elastic Net__tol": Real(0.00001, 0.001)
 }
@@ -47,7 +47,7 @@ ridge_param = {
 }
 
 lasso_param = {
-    "regressor__Lasso__alpha": Real(0.0001, 1000)
+    "regressor__Lasso__alpha": Real(0.0001, 1000, prior="log-uniform")
 }
 
 svr_param = {
@@ -79,7 +79,7 @@ xgb_param = {
 
 mlp_param = {
     'regressor__MLP__hidden_layer_sizes': [(2,), (4,), (8,), (4,4), (4,2), (4,4,2)],
-    'regressor__MLP__alpha': Real(0.0001, 100),
+    'regressor__MLP__alpha': Real(0.0001, 100, prior="log-uniform"),
     'regressor__MLP__activation': ['relu', 'tanh'],
     'regressor__MLP__learning_rate_init': Real(0.00001, 0.01)
 }
