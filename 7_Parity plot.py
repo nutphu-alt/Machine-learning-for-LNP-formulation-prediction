@@ -27,9 +27,9 @@ y = df[TARGET]
 y = y.values.ravel()
 
 en_param = {
-    "regressor__Elastic Net__alpha": Real(0.0001, 1000),
+    "regressor__Elastic Net__alpha": Real(0.0001, 1000, prior="log-uniform"),
     "regressor__Elastic Net__l1_ratio": Real(0, 1),
-    "regressor__Elastic Net__tol": Real(0.00001, 0.001)
+    "regressor__Elastic Net__tol": Real(0.00001, 0.001, prior="log-uniform")
 }
 
 def log10_transform(y):
