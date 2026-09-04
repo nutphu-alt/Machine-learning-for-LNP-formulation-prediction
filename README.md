@@ -104,13 +104,13 @@ The correlation heatmap of input parameters aginst output parameters is generate
 The heatmap displays the same trend as the scatter plot. the pH and Helper lipid shows significant positive correlation with MFI, while Ionizable lipid and PEG lipid shows negative correlation.  
 
 ## 4. Model selection  
-In order to select the best model for predicting MFI, nested cross validation, together with hyperparameter optimization, was performed. Leave one out cross validation was used as a outer cv method, since the dataset was very small, while RepeatedKFold was used as a inner cv method. Cholesterol was shown to have only a little correlation with the MFI, so I decided to withdraw it from the inputs. The model with the lowest root mean square error (RMSE) was selected.
+In order to select the best model for predicting MFI, nested cross validation, together with hyperparameter optimization, was performed. Leave one out cross validation was used as a outer cv method, since the dataset was very small, while RepeatedKFold (n_splits=5) was used as a inner cv method. Cholesterol was shown to have only a little correlation with the MFI, so I decided to withdraw it from the inputs. The model with the lowest root mean square error (RMSE) was selected.
 
 <p align="center">
 <img width="517" height="356" alt="image" src="https://github.com/user-attachments/assets/cba7ccef-00fd-43f2-b282-27fda38713e6" />
 </p>
 
-Elastic Net model shows the lowest RMSE value. Therefore, it is selected for prediction.  
+Since the relationship between input parameters and output parameter is in linear function, The 3 lowest RMSE models are all linear regression model. Elastic Net model shows the lowest RMSE value. Therefore, it is selected for prediction.  
 
 ## 5. Learning curve plot  
 After the model was selected, learning curve was plot to determine the model's performance as the training set size increases. LeavOneOut was used since the dataset is very small.
@@ -151,9 +151,34 @@ The weight of each parameter was also plot and shown below.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 <br>
+
 <p align="left">
-**Due to the small size of the data set, we cannot observe the turning point of MFI in each input. We can actually predict the optimized formula from just visuallized data. However, this workflow can be fundamentally used with other, larger datasets.
+Since the above data represents a very small dataset without turning point of MFI in each input, I, therefore, used AI to generate a larger dataset with the turning point of MFI in each input as shown below.
+ 
+<p align="center">
+<img width="1784" height="727" alt="image" src="https://github.com/user-attachments/assets/2f8e9ac7-74e1-4d2a-b7da-34430bb257ae" />
 </p>
+<br>
+To evaluate and select the model, The outer cv method was changed to RepeatedKFold (n_splits=5).
+<br>
+<br>
+<p align="center">
+<img width="517" height="356" alt="image" src="https://github.com/user-attachments/assets/da2e5c0b-2ed6-4dd3-83fc-099b9c93e32f" />
+</p>
+<br>
+The MLP model shows the lowest RMSE, while the 3 regularized linear models show high RMSE corresponding to non-linear relationship between input parameters and output parameter.
+The parity plot of training (85%) and test (15%) set displays high R<sup>2</sup> value, representing high accuracy of the model.
+<br>
+<br>
+<p align="center">
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/e6e8dc8c-1b6d-4a0a-a6f2-a0aa7dfdf8bc" />
+<br>
+<br>
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/3d030690-a5b6-4b0d-ab69-d3c1623d3b88" />
+</p>
+<br>
+In conclusion, this project represents the machine learning pipeline for LNP optimization for both small and large dataset with moderate to high accuracy depends on the size of the dataset. 
+
 
 
 
